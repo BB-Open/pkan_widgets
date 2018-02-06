@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="pkan.widgets">
+
+  <z3c:widgetTemplate
+      mode="display"
+      field="z3c.relationfield.interfaces.IRelationChoice"
+      widget=".widget.IRelatedItemsWidget"
+      layer="pkan.widgets.interfaces.IPkanWidgetsLayer"
+      template="widget_display.pt"
+      />
+
+  <z3c:widgetTemplate
+      mode="display"
+      field="z3c.relationfield.interfaces.IRelationList"
+      widget=".widget.IRelatedItemsWidget"
+      layer="pkan.widgets.interfaces.IPkanWidgetsLayer"
+      template="widget_display.pt"
+      />
+
+</configure>

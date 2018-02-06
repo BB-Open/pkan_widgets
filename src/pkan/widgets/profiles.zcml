@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="pkan.widgets">
+
+  <!-- GenericSetup Profiles. -->
+  <!-- ====================== -->
+
+  <!-- Installation: Plone 5. -->
+  <genericsetup:registerProfile
+      name="default"
+      title="pkan.widgets"
+      directory="profiles/default"
+      description="Installs the pkan.widgets add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <!-- Uninstall: Plone 5. -->
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="pkan.widgets (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the pkan.widgets add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+
+  <!-- GenericSetup utilities. -->
+  <!-- ======================= -->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="pkan.widgets-hiddenprofiles"
+      />
+
+</configure>

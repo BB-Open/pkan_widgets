@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="pkan.widgets">
+
+  <!-- Include package dependencies. -->
+  <include file="profiles.zcml" />
+  <include package=".relateditems" />
+
+  <browser:resourceDirectory
+      directory="static"
+      layer=".interfaces.IPkanWidgetsLayer"
+      name="pkan.widgets"
+      />
+
+</configure>
