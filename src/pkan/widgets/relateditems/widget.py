@@ -18,10 +18,10 @@ from zope.schema.interfaces import IField
 
 
 MARKUP = u"""
+{widget}
 <div class="relateditems-addnew">
   <a class="{klass} pat-plone-modal" target="_blank" href="{url}">{title}</a>
 </div>
-{widget}
 """
 
 
