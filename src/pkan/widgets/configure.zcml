@@ -7,6 +7,7 @@
 
   <!-- Include package dependencies. -->
   <include file="profiles.zcml" />
+  <include file="upgrades.zcml" />
   <include package=".relateditems" />
 
   <browser:resourceDirectory
