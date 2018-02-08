@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <registry>
   <records
-      prefix="plone.resources/pkanwidgetsrelateditems"
+      prefix="plone.resources/pkanwidgets"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
     <value key="css">
-      <element>++resource++pkan.widgets/relateditems.css</element>
+      <element>++resource++pkan.widgets/pkan.css</element>
     </value>
   </records>
 </registry>
