@@ -2,6 +2,7 @@
 """An advanced AJAX select widget for Plone."""
 
 from pkan.widgets.base import AddItemMixin
+from plone import api
 from plone.app.z3cform.interfaces import IAjaxSelectWidget
 from plone.app.z3cform.widget import AjaxSelectWidget
 from z3c.form.interfaces import IFieldWidget
@@ -31,6 +32,35 @@ class AjaxSelectAddWidget(AjaxSelectWidget, AddItemMixin):
             return widget
 
         return self.render_widget(widget)
+
+    def related_items(self):
+        related = self.value
+        if not related:
+            return ()
+        related = related.split(self.separator)
+        return self.related2brains(related)
+
+    def related2brains(self, related):
+        """Return a list of brains based on a list of UIDs.
+
+        Will filter relations if the user has no permission to access
+        the content.
+        :param related: related items
+        :type related: list of UIDs
+        :return: list of catalog brains
+        """
+        catalog = api.portal.get_tool(name='portal_catalog')
+        brains = catalog(UID=related)
+        if brains:
+            # build a position dict by iterating over the items once
+            positions = dict([(v, i) for (i, v) in enumerate(related)])
+            # We need to keep the ordering intact
+            res = list(brains)
+
+            def _key(brain):
+                return positions.get(brain.UID, -1)
+            res.sort(key=_key)
+        return brains
 
 
 @adapter(IField, IFormLayer)

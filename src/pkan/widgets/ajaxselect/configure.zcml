@@ -3,4 +3,20 @@
     xmlns:z3c="http://namespaces.zope.org/z3c"
     i18n_domain="pkan.widgets">
 
+  <z3c:widgetTemplate
+      mode="display"
+      field="zope.schema.interfaces.IChoice"
+      widget=".widget.IAjaxSelectAddWidget"
+      layer="pkan.widgets.interfaces.IPkanWidgetsLayer"
+      template="widget_display.pt"
+      />
+
+  <z3c:widgetTemplate
+      mode="display"
+      field="zope.schema.interfaces.IList"
+      widget=".widget.IAjaxSelectAddWidget"
+      layer="pkan.widgets.interfaces.IPkanWidgetsLayer"
+      template="widget_display.pt"
+      />
+
 </configure>
