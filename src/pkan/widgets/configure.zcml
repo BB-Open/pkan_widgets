@@ -8,6 +8,7 @@
   <!-- Include package dependencies. -->
   <include file="profiles.zcml" />
   <include file="upgrades.zcml" />
+  <include package=".ajaxselect" />
   <include package=".relateditems" />
 
   <browser:resourceDirectory
