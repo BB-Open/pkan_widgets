@@ -19,11 +19,11 @@ class IRelatedItemsWidget(IBaseWidget):
 
 
 @implementer_only(IRelatedItemsWidget)
-class RelatedItemsWidget(BaseWidget, AddItemMixin):
+class RelatedItemsAddWidget(BaseWidget, AddItemMixin):
     """An advanced related items widget for Plone."""
 
     def render(self):
-        widget = super(RelatedItemsWidget, self).render()
+        widget = super(RelatedItemsAddWidget, self).render()
 
         if self.mode != 'input':
             return widget
@@ -65,8 +65,8 @@ class RelatedItemsWidget(BaseWidget, AddItemMixin):
 
 @adapter(IField, IFormLayer)
 @implementer(IFieldWidget)
-def RelatedItemsFieldWidget(field, request, extra=None):
+def RelatedItemsAddFieldWidget(field, request, extra=None):
     """An advanced related items widget for Plone."""
     if extra is not None:
         request = extra
-    return FieldWidget(field, RelatedItemsWidget(request))
+    return FieldWidget(field, RelatedItemsAddWidget(request))
