@@ -2,6 +2,7 @@
 """Base widget classes."""
 
 from plone import api
+from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.dexterity.interfaces import IDexterityFTI
 from Products.CMFPlone.resources import add_resource_on_request
 from zope.component import getUtility
@@ -42,6 +43,8 @@ class AddItemMixin(object):
             if initial_path.startswith('/'):
                 initial_path = initial_path[1:]
             ctx = api.portal.get_navigation_root(self.context)
+            if not INavigationRoot.providedBy(ctx):
+                ctx = api.portal.get()
             base = ctx.absolute_url()
             initial_path = '/'.join([base, initial_path])
         return u'{0}++add++{1}'.format(
