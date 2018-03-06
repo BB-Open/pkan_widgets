@@ -1,28 +1,26 @@
 # -*- coding: utf-8 -*-
 """An advanced AJAX select widget for Plone."""
 from Products.CMFPlone.resources import add_resource_on_request
-from pkan.widgets.base import AddItemMixin
-from plone import api
-from plone.app.widgets.base import TextareaWidget
-from z3c.form.browser.text import TextWidget
 from z3c.form.browser.textarea import TextAreaWidget
-from z3c.form.interfaces import IFieldWidget, ITextAreaWidget
+from z3c.form.interfaces import IFieldWidget
 from z3c.form.interfaces import IFormLayer
+from z3c.form.interfaces import ITextAreaWidget
 from z3c.form.widget import FieldWidget
 from zope.component import adapter
+from zope.i18n import translate
 from zope.interface import implementer
 from zope.interface import implementer_only
 from zope.schema.interfaces import IField
-from zope.i18n import translate
+
 
 MARKUP = u"""
 {widget}
 <div class="pkan-addnew">
-  <textarea id="form-widgets-query-preview" 
-  name="form.widgets.preview" class="textarea-widget 
-  text-field">No value</textarea>
-  <input class="context pat-contentloaderform" 
-      data-pat-contentloaderform="form:{form};url:{url};target:#form-widgets-query-preview;" 
+  <textarea id="form-widgets-query-preview"
+  name="form.widgets.preview" class="textarea-widget text-field">
+  No value</textarea>
+  <input class="context pat-contentloader"
+      data-pat-contentloader="form:{form};url:{url};target:#form-widgets-query-preview;"
       id="id-preview" value="preview"
       name="preview"/>
 </div>
