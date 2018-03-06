@@ -9,6 +9,7 @@
   <include file="profiles.zcml" />
   <include file="upgrades.zcml" />
   <include package=".ajaxselect" />
+  <include package=".query" />
   <include package=".relateditems" />
 
   <browser:resourceDirectory

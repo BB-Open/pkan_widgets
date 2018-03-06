@@ -1,0 +1,8 @@
+<div class="relatedItems"
+     i18n:domain="plone"
+     tal:define="related view/related_items"
+     tal:condition="related">
+    <div class="visualClear" id="clear-space-before-relatedItemBox"><!-- --></div>
+    <div tal:replace="structure widget/render">
+    </div>
+</div>
