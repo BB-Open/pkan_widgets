@@ -19,8 +19,8 @@ MARKUP = u"""
   <textarea id="form-widgets-query-preview"
   name="form.widgets.preview" class="textarea-widget text-field">
   No value</textarea>
-  <input class="context pat-contentloader"
-      data-pat-contentloader="form:{form};url:{url};target:#form-widgets-query-preview;"
+  <input class="context pat-contentloaderform"
+      data-pat-contentloadeformr="form:{form};url:{url};target:#form-widgets-query-preview;"
       id="id-preview" value="preview"
       name="preview"/>
 </div>
