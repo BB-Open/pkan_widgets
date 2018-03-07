@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""An advanced AJAX select widget for Plone."""
+"""A custom SPARQL Query widget."""
+
 from Products.CMFPlone.resources import add_resource_on_request
 from z3c.form.browser.textarea import TextAreaWidget
 from z3c.form.interfaces import IFieldWidget
@@ -15,28 +16,23 @@ from zope.schema.interfaces import IField
 
 MARKUP = u"""
 {widget}
-<div class="pkan-addnew">
-  <textarea id="form-widgets-query-preview"
-  name="form.widgets.preview" class="textarea-widget text-field">
-  No value</textarea>
-  <input class="context pat-contentloaderform"
-      data-pat-contentloadeformr="form:{form};url:{url};target:#form-widgets-query-preview;"
-      id="id-preview" value="preview"
-      name="preview"/>
+<div class="pkan-sparqlquery">
+  <a class="{klass} pat-contentloaderform" target="_blank" href="{preview_url}"
+      data-pat-contentloadeformr="form:{form};url:{url};target:{widget_id};">{title}</a>
 </div>
 """
 
 
-class IQueryWidget(ITextAreaWidget):
-    """Marker interface for the Query Widget."""
+class ISparqlQueryWidget(ITextAreaWidget):
+    """Marker interface for the Sparql Query Widget."""
 
 
-@implementer_only(IQueryWidget)
-class QueryWidget(TextAreaWidget):
-    """An Query widget for Plone."""
+@implementer_only(ISparqlQueryWidget)
+class SparqlQueryWidget(TextAreaWidget):
+    """A Sparql query widget with preview for Plone."""
 
     def render(self):
-        widget = super(QueryWidget, self).render()
+        widget = super(SparqlQueryWidget, self).render()
 
         if self.mode != 'input':
             return widget
@@ -55,7 +51,7 @@ class QueryWidget(TextAreaWidget):
             context=self.request,
             default='Query',
         )
-        url = self.context.absolute_url() + '/harvester_preview'
+        url = self.context.absolute_url() + '/@@harvester_preview'
         return MARKUP.format(
             klass=u'context',
             title=title,
@@ -67,8 +63,8 @@ class QueryWidget(TextAreaWidget):
 
 @adapter(IField, IFormLayer)
 @implementer(IFieldWidget)
-def QueryFieldWidget(field, request, extra=None):
-    """An advanced ajax select widget for Plone."""
+def SparqlQueryFieldWidget(field, request, extra=None):
+    """A custom SPARQL Query widget."""
     if extra is not None:
         request = extra
-    return FieldWidget(field, QueryWidget(request))
+    return FieldWidget(field, SparqlQueryWidget(request))
