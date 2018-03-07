@@ -9,8 +9,8 @@
   <include file="profiles.zcml" />
   <include file="upgrades.zcml" />
   <include package=".ajaxselect" />
-  <include package=".query" />
   <include package=".relateditems" />
+  <include package=".sparqlquery" />
 
   <browser:resourceDirectory
       directory="static"
