@@ -18,7 +18,8 @@ MARKUP = u"""
 {widget}
 <div class="pkan-sparqlquery">
   <a class="{klass} pat-contentloaderform" target="_blank" href="{preview_url}"
-      data-pat-contentloadeformr="form:{form};url:{url};target:{widget_id};">{title}</a>
+      data-pat-contentloaderform="form:#{form};url:{url};target:#{widget_id};">{title}</a>
+  <pre class="pkan-sparqlquery__preview" id="{widget_id}"></pre>
 </div>
 """
 
@@ -45,19 +46,25 @@ class SparqlQueryWidget(TextAreaWidget):
     def render_widget(self, widget):
         add_resource_on_request(self.request, 'pkanwidgets')
         title = translate(
-            'heading_add_item',
-            domain='plone',
+            'heading_preview',
+            domain='pkan.widgets',
             mapping={},
             context=self.request,
-            default='Query',
+            default='Update Preview',
         )
-        url = self.context.absolute_url() + '/@@harvester_preview'
+        url = '/'.join([
+            self.context.absolute_url(),
+            '@@harvester_preview',
+        ])
+        preview_url = url
         return MARKUP.format(
+            form=self.form.id,
             klass=u'context',
+            preview_url=preview_url,
             title=title,
-            widget=widget,
             url=url,
-            form='#form',
+            widget=widget,
+            widget_id=self.id + '__preview',
         )
 
 
