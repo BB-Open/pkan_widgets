@@ -6,6 +6,16 @@
   border-bottom: none;
 }
 
-#form-widgets-query-preview {
-  background-color: #00587e;
+.pkan-sparqlquery {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+#content-core .pkan-sparqlquery a {
+  border-bottom: none;
+}
+
+.pkan-sparqlquery__preview {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
