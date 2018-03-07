@@ -55,7 +55,7 @@ class QueryWidget(TextAreaWidget):
             context=self.request,
             default='Query',
         )
-        url = self.context.absolute_url() + '/get_preview'
+        url = self.context.absolute_url() + '/harvester_preview'
         return MARKUP.format(
             klass=u'context',
             title=title,
