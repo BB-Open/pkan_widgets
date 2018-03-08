@@ -4,8 +4,9 @@
  *    url(string): To load content from remote resource. Use 'el' to use with anchor tag href.
  *    content(string): CSS selector for content already on page. Can be used in conjunction with url to load remote content on page.
  *    trigger(string): Event to trigger content loading. Defaults to "click"
- *    target(string): CSS selector of target for content loading. If this is empty, it's assume content will replace pattern element.
- *    form(string): CSS selectors of form to be send JSON coded with the AJAX request
+ *    target_id(string): CSS selector of target for content loading. If this is empty, it's assume content will replace pattern element.
+ *    form_id(string): CSS selectors of form to be send JSON coded with the AJAX request
+ *    query_id(string): Mandatory: ID of the widgets query element
  *
  * Documentation:
  *    # With selector
@@ -49,7 +50,8 @@ require([
       target: null,
       template: null,
       dataType: 'html',
-      form: ''
+      form_id: '',
+      query_id: ''
     },
     init: function() {
       console.log('pat-contentloaderform: init')
@@ -78,9 +80,13 @@ require([
     },
     loadRemote: function(){
       var that = this;
+      var form_data = $( that.options.form_id ).serializeArray();
+      var query_data = $( that.options.query_id ).serializeArray();
+      query_data[0].name = 'query_data';
+      form_data.push( query_data[0] );
       $.ajax({
         url: that.options.url,
-        data: $( that.options.form ).serializeArray(),
+        data: form_data,
         dataType: that.options.dataType,
         success: function(data){
           var $el;
