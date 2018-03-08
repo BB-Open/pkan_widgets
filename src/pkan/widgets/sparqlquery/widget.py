@@ -38,9 +38,6 @@ class SparqlQueryWidget(TextAreaWidget):
         if self.mode != 'input':
             return widget
 
-#        if self.content_type is None:
-#            return widget
-
         return self.render_widget(widget)
 
     def render_widget(self, widget):
