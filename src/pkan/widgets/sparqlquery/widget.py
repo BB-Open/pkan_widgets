@@ -49,10 +49,17 @@ class SparqlQueryWidget(TextAreaWidget):
             context=self.request,
             default='Update Preview',
         )
-        try:
-            context_url = self.context.absolute_url()
-        except AttributeError:
-            context_url = self.form.context.absolute_url()
+
+        if self.form.ignoreContext:
+            context_url = ''
+        else:
+            try:
+                context_url = self.context.absolute_url()
+            except AttributeError:
+                if getattr(self.form, 'parentForm'):
+                    context_url = self.form.parentForm.context.absolute_url()
+                else:
+                    context_url = self.form.context.absolute_url()
 
         url = '/'.join([
             context_url,
