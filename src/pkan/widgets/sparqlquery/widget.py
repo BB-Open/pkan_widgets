@@ -75,7 +75,7 @@ class SparqlQueryWidget(TextAreaWidget):
             widget=widget,
             form_id=self.form.id,
             query_id=self.id,
-            target_id=self.id  '__preview',
+            target_id=self.id + '__preview',
         )
 
 
