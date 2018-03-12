@@ -1,11 +1,38 @@
 <?xml version="1.0"?>
 <registry>
   <records
-      prefix="plone.resources/pkanwidgets"
+      prefix="plone.resources/pkanpatterncontentloaderform"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
     <value key="css">
       <element>++resource++pkan.widgets/pkan.css</element>
     </value>
-    <value key="js">++resource++pkan.widgets/pattern.js</value>
+    <value key="js">++resource++pkan.widgets/pattern_contentloaderform.js</value>
   </records>
+  <records
+      prefix="plone.resources/pkanpatterngraph"
+      interface="Products.CMFPlone.interfaces.IResourceRegistry">
+    <value key="css">
+      <element>++resource++pkan.widgets/pattern_graph.css</element>
+    </value>
+    <value key="js">++resource++pkan.widgets/pattern_graph.js</value>
+  </records>
+  <records
+      prefix="plone.resources/cytoscape"
+      interface="Products.CMFPlone.interfaces.IResourceRegistry">
+    <value key="js">++resource++pkan.widgets/cytoscape.js</value>
+  </records>
+
+<!-- Bundle -->
+  <records prefix="plone.bundles/pkancytoscape"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources">
+          <element>cytoscape</element>
+      </value>
+      <value key="stub_js_modules">
+      </value>
+      <value key="depends">plone</value>
+      <value key="enabled">True</value>
+      <value key="compile">True</value>
+  </records>
+
 </registry>

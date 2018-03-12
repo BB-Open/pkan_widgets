@@ -37,7 +37,7 @@ require([
 ], function($, Base, logger, Registry, utils, _) {
   'use strict';
   var log = logger.getLogger('pat-contentloaderform');
-  console.log('pat-contentloaderform')
+  console.log('pat-contentloaderform');
 
   var ContentLoader = Base.extend({
     name: 'contentloaderform',
@@ -54,7 +54,7 @@ require([
       query_id: ''
     },
     init: function() {
-      console.log('pat-contentloaderform: init')
+      console.log('pat-contentloaderform: init');
       var that = this;
       that.$el.addClass('test-test-test');
       if(that.options.url === 'el' && that.$el[0].tagName === 'A'){
