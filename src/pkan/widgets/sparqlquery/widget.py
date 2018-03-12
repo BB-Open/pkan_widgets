@@ -49,8 +49,21 @@ class SparqlQueryWidget(TextAreaWidget):
             context=self.request,
             default='Update Preview',
         )
+        if self.form.ignoreContext:
+            context_url = ''
+        else:
+
+            try:
+                context_url = self.context.absolute_url()
+            except AttributeError:
+
+                if getattr(self.form, 'parentForm', None):
+                    context_url = self.form.parentForm.context.absolute_url()
+                else:
+                    context_url = self.form.context.absolute_url()
+
         url = '/'.join([
-            self.context.absolute_url(),
+            context_url,
             '@@harvester_preview',
         ])
         preview_url = url
@@ -62,7 +75,7 @@ class SparqlQueryWidget(TextAreaWidget):
             widget=widget,
             form_id=self.form.id,
             query_id=self.id,
-            target_id=self.id + '__preview',
+            target_id=self.id  '__preview',
         )
 
 
