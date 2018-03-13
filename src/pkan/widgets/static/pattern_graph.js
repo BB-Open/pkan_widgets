@@ -14,8 +14,9 @@ require([
   'pat-registry',
   'mockup-utils',
   'cytoscape',
+  'cytoscape-cose-bilkent',
   'underscore',
-], function($, Base, logger, Registry, utils, cytoscape, _) {
+], function($, Base, logger, Registry, utils, cytoscape, coseBilkent,  _) {
   'use strict';
   var log = logger.getLogger('pat-graph');
   console.log('pat-graph');
@@ -35,6 +36,7 @@ require([
     },
     init: function() {
       console.log('pat-graph: init');
+      coseBilkent( cytoscape );
       var that = this;
       if(that.options.trigger === 'immediate'){
         that._load();
@@ -49,7 +51,7 @@ require([
       var that = this;
       var cy = cytoscape({
         container: $('#cy'), // container to render in
-        elements: data,
+        elements: data['elements'],
         style: cytoscape.stylesheet()
             .selector('node')
               .css({
@@ -57,9 +59,9 @@ require([
                 'background-color': 'data(pkbackgroundcolor)',
                 'shape': 'data(pkshape)',
                 'width': 'data(pkwidth)',
-                'content': 'data(id)',
+                'content': 'data(title)',
                 'text-halign': 'center',
-                'text-valign': 'data(pkvalign)',
+                'text-valign': 'center',
                 'height':'20',
                 'border-color':'#000000',
               })
@@ -68,11 +70,28 @@ require([
                 'label': 'data(label)',
                 'edge-text-rotation': 'autorotate'
               }),
-
         layout: {
-          name: 'preset',
-          padding: 5
-        }
+        name: 'cose-bilkent',
+        idealEdgeLength: 100,
+        nodeOverlap: 2,
+        refresh: 20,
+        fit: true,
+        padding: 300,
+        randomize: true,
+        componentSpacing: 100,
+        nodeRepulsion: 400000,
+        edgeElasticity: 100,
+        nestingFactor: 10,
+        gravity: 10,
+        numIter: 15000,
+        initialTemp: 500,
+        coolingFactor: 0.98,
+        minTemp: 1.0,
+        tile: true,
+        animate: true,
+        tilingPaddingVertical: 80,
+        tilingPaddingHorizontal: 80
+      }
         });
     },
     _load: function(){

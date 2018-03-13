@@ -21,12 +21,28 @@
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
     <value key="js">++resource++pkan.widgets/cytoscape.js</value>
   </records>
+  <records
+      prefix="plone.resources/cytoscape-cose-bilkent"
+      interface="Products.CMFPlone.interfaces.IResourceRegistry">
+    <value key="js">++resource++pkan.widgets/cytoscape-cose-bilkent.js</value>
+  </records>
 
 <!-- Bundle -->
   <records prefix="plone.bundles/pkancytoscape"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
       <value key="resources">
           <element>cytoscape</element>
+      </value>
+      <value key="stub_js_modules">
+      </value>
+      <value key="depends">plone</value>
+      <value key="enabled">True</value>
+      <value key="compile">True</value>
+  </records>
+  <records prefix="plone.bundles/pkancytoscapecosebilkent"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources">
+          <element>cytoscape-cose-bilkent</element>
       </value>
       <value key="stub_js_modules">
       </value>
