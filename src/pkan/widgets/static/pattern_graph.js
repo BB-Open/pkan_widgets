@@ -15,8 +15,9 @@ require([
   'mockup-utils',
   'cytoscape',
   'cytoscape-cose-bilkent',
+  'cytoscape-dagre',
   'underscore',
-], function($, Base, logger, Registry, utils, cytoscape, coseBilkent,  _) {
+], function($, Base, logger, Registry, utils, cytoscape, coseBilkent, dagre, _) {
   'use strict';
   var log = logger.getLogger('pat-graph');
   console.log('pat-graph');
@@ -37,7 +38,7 @@ require([
     init: function() {
       console.log('pat-graph: init');
       coseBilkent( cytoscape );
-      coseBilkent( cytoscape );
+      dagre( cytoscape );
       var that = this;
       if(that.options.trigger === 'immediate'){
         that._load();
@@ -72,26 +73,26 @@ require([
                 'edge-text-rotation': 'autorotate'
               }),
         layout: {
-        name: 'dagre',
-//        idealEdgeLength: 500,
-//        nodeOverlap: 2,
-//        refresh: 20,
-//        fit: true,
-//        padding: 300,
-//        randomize: true,
-//        componentSpacing: 100,
-//        nodeRepulsion: 4000000,
-//        edgeElasticity: 10000,
-//        nestingFactor: 1,
-//        gravity: 2,
-//        numIter: 5000,
-//        initialTemp: 200,
-//        coolingFactor: 0.98,
-//        minTemp: 1.0,
-//        tile: true,
-//        animate: true,
-//        tilingPaddingVertical: 80,
-//        tilingPaddingHorizontal: 80
+        name: 'cose-bilkent',
+        idealEdgeLength: 500,
+        nodeOverlap: 2,
+        refresh: 20,
+        fit: true,
+        padding: 300,
+        randomize: true,
+        componentSpacing: 100,
+        nodeRepulsion: 4000000,
+        edgeElasticity: 10000,
+        nestingFactor: 1,
+        gravity: 2,
+        numIter: 5000,
+        initialTemp: 200,
+        coolingFactor: 0.98,
+        minTemp: 1.0,
+        tile: true,
+        animate: true,
+        tilingPaddingVertical: 80,
+        tilingPaddingHorizontal: 80
       }
         });
     },
