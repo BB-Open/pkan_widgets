@@ -37,6 +37,7 @@ require([
     init: function() {
       console.log('pat-graph: init');
       coseBilkent( cytoscape );
+      coseBilkent( cytoscape );
       var that = this;
       if(that.options.trigger === 'immediate'){
         that._load();
@@ -71,26 +72,26 @@ require([
                 'edge-text-rotation': 'autorotate'
               }),
         layout: {
-        name: 'cose-bilkent',
-        idealEdgeLength: 100,
-        nodeOverlap: 2,
-        refresh: 20,
-        fit: true,
-        padding: 300,
-        randomize: true,
-        componentSpacing: 100,
-        nodeRepulsion: 400000,
-        edgeElasticity: 100,
-        nestingFactor: 10,
-        gravity: 10,
-        numIter: 15000,
-        initialTemp: 500,
-        coolingFactor: 0.98,
-        minTemp: 1.0,
-        tile: true,
-        animate: true,
-        tilingPaddingVertical: 80,
-        tilingPaddingHorizontal: 80
+        name: 'dagre',
+//        idealEdgeLength: 500,
+//        nodeOverlap: 2,
+//        refresh: 20,
+//        fit: true,
+//        padding: 300,
+//        randomize: true,
+//        componentSpacing: 100,
+//        nodeRepulsion: 4000000,
+//        edgeElasticity: 10000,
+//        nestingFactor: 1,
+//        gravity: 2,
+//        numIter: 5000,
+//        initialTemp: 200,
+//        coolingFactor: 0.98,
+//        minTemp: 1.0,
+//        tile: true,
+//        animate: true,
+//        tilingPaddingVertical: 80,
+//        tilingPaddingHorizontal: 80
       }
         });
     },
