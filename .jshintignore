@@ -1,1 +1,4 @@
 src/pkan/widgets/static/cytoscape.js
+src/pkan/widgets/static/cytoscape-dagre.js
+src/pkan/widgets/static/cytoscape-cose-bilkent.js
+src/pkan/widgets/static/node_modules/**/*.js
