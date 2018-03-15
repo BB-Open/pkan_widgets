@@ -20,4 +20,10 @@
       name="pkan.widgets"
       />
 
+  <browser:resourceDirectory
+      directory="node_modules"
+      layer=".interfaces.IPkanWidgetsLayer"
+      name="pkan.widgets.dev"
+      />
+
 </configure>

@@ -57,42 +57,28 @@ require([
         style: cytoscape.stylesheet()
             .selector('node')
               .css({
-                'font-size': '10pt',
+                'font-size': 'data(pkfontsize)',
                 'background-color': 'data(pkbackgroundcolor)',
                 'shape': 'data(pkshape)',
                 'width': 'data(pkwidth)',
                 'content': 'data(title)',
                 'text-halign': 'center',
-                'text-valign': 'center',
+                'text-valign': 'data(pkvalign)',
                 'height':'20',
                 'border-color':'#000000',
+                'border-width': 1,
               })
             .selector('edge')
               .css({
                 'label': 'data(label)',
                 'edge-text-rotation': 'autorotate'
               }),
+//          layout: {
+//            name: 'dagre',
+//            }
         layout: {
         name: 'cose-bilkent',
-        idealEdgeLength: 500,
-        nodeOverlap: 2,
-        refresh: 20,
-        fit: true,
-        padding: 300,
-        randomize: true,
-        componentSpacing: 100,
-        nodeRepulsion: 4000000,
-        edgeElasticity: 10000,
-        nestingFactor: 1,
-        gravity: 2,
-        numIter: 5000,
-        initialTemp: 200,
-        coolingFactor: 0.98,
-        minTemp: 1.0,
-        tile: true,
-        animate: true,
-        tilingPaddingVertical: 80,
-        tilingPaddingHorizontal: 80
+        nodeRepulsion: 8000
       }
         });
     },

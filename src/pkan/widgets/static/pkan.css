@@ -1,0 +1,11 @@
+.pkan-addnew {
+  margin-bottom: 0.5em;
+}
+
+#content-core .pkan-addnew a {
+  border-bottom: none;
+}
+
+#form-widgets-query-preview {
+  background-color: #00587e;
+}
