@@ -56,7 +56,7 @@
       <value key="enabled">True</value>
       <value key="jscompilation">++resource++pkan.widgets/pkancytoscape.min.js</value>
       <value key="csscompilation"></value>
-      <value key="last_compilation">2018-03-13 10:00:00</value>
+      <value key="last_compilation">2018-03-16 09:17:00</value>
 
       <!-- so we don't include these modules multiple times -->
       <value key="stub_js_modules">
