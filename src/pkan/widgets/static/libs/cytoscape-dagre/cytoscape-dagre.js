@@ -2,7 +2,7 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("dagre"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["dagre"], factory);
 	else if(typeof exports === 'object')
 		exports["cytoscapeDagre"] = factory(require("dagre"));
 	else

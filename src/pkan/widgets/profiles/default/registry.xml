@@ -19,22 +19,22 @@
   <records
       prefix="plone.resources/cytoscape"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
-    <value key="js">++resource++pkan.widgets.dev/cytoscape/dist/cytoscape.min.js</value>
+    <value key="js">++resource++pkan.widgets/libs/cytoscape/dist/cytoscape.min.js</value>
   </records>
   <records
       prefix="plone.resources/cytoscape-cose-bilkent"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
-    <value key="js">++resource++pkan.widgets.dev/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js</value>
+    <value key="js">++resource++pkan.widgets/libs/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js</value>
   </records>
   <records
       prefix="plone.resources/cytoscape-dagre"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
-    <value key="js">++resource++pkan.widgets.dev/cytoscape-dagre/cytoscape-dagre.js</value>
+    <value key="js">++resource++pkan.widgets/libs/cytoscape-dagre/cytoscape-dagre.js</value>
   </records>
   <records
       prefix="plone.resources/dagre"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
-    <value key="js">++resource++pkan.widgets.dev/dagre/dist/dagre.min.js</value>
+    <value key="js">++resource++pkan.widgets/libs/dagre/dist/dagre.min.js</value>
   </records>
 
   <!-- Bundle resource-->
@@ -56,7 +56,7 @@
       <value key="enabled">True</value>
       <value key="jscompilation">++resource++pkan.widgets/pkancytoscape.min.js</value>
       <value key="csscompilation"></value>
-      <value key="last_compilation">2018-03-13 10:00:00</value>
+      <value key="last_compilation">2018-03-16 09:17:00</value>
 
       <!-- so we don't include these modules multiple times -->
       <value key="stub_js_modules">
