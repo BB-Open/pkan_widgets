@@ -64,9 +64,13 @@ require([
                 'content': 'data(title)',
                 'text-halign': 'center',
                 'text-valign': 'data(pkvalign)',
+                'text-wrap': 'wrap',
+                'text-max-width': '1000px',
                 'height':'20',
                 'border-color':'#000000',
                 'border-width': 1,
+                'border-color': 'data(pkbordercolor)',
+                'opacity': 'data(pkopacity)'
               })
             .selector('edge')
               .css({
@@ -78,7 +82,7 @@ require([
 //            }
         layout: {
         name: 'cose-bilkent',
-        nodeRepulsion: 8000
+        nodeRepulsion: 8000,
       }
         });
     },
