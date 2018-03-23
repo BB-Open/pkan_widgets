@@ -5,7 +5,7 @@
     i18n_domain="pkan.widgets">
 
   <include package="z3c.form" file="meta.zcml" />
-+ <include package="z3c.form" />
+  <include package="z3c.form" />
 
   <!-- Include package dependencies. -->
   <include file="profiles.zcml" />
