@@ -41,7 +41,7 @@ class SparqlQueryWidget(TextAreaWidget):
         return self.render_widget(widget)
 
     def render_widget(self, widget):
-        add_resource_on_request(self.request, 'pkanwidgets')
+        add_resource_on_request(self.request, 'pkanpatterncontentloaderform')
         title = translate(
             'heading_preview',
             domain='pkan.widgets',

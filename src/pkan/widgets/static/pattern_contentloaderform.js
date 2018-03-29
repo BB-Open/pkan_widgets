@@ -94,7 +94,7 @@ require([
             if(data.indexOf('<html') !== -1){
               data = utils.parseBodyTag(data);
             }
-            $el = $(data);
+            $el = data;
           }else if(that.options.dataType.indexOf('json') !== -1){
             // must have template defined with json
             if(data.constructor === Array && data.length === 1){
@@ -138,8 +138,8 @@ require([
       if(!$content){
         $content = $(that.options.content).clone();
       }
-      $content.show();
-      $target.replaceWith($content);
+//      $content.show();
+      $target.text($content);
       Registry.scan($content);
       that.$el.removeClass('loading-content');
     }
