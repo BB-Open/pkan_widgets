@@ -18,6 +18,7 @@ install_requires = [
     # -*- Extra requirements: -*-
     'plone.app.z3cform',
     'Products.GenericSetup>=1.8.2',
+    'pkan.dcatapde'
 ],
 
 testfixture_requires = [
