@@ -10,8 +10,10 @@
                           context_state nocall:context/@@plone_context_state;
                           use_view_action python:context.portal_registry.get('types_use_view_action_in_listings', []);">
         <ul>
-          <li tal:repeat="item related">
-            <span tal:define="desc                item/Description;
+          <li tal:repeat="dataset related">
+            <span tal:condition="dataset/permission"
+                  tal:define="item                dataset/item;
+                              desc                item/Description;
                               item_type           item/portal_type;
                               item_type_class     python:'contenttype-' + normalizeString(item_type);
                               item_wf_state       item/review_state|python: context_state.workflow_state();
@@ -26,11 +28,13 @@
                       tal:condition="item_has_image"
                       tal:attributes="src  string:$getIcon">
                   <span tal:attributes="class string:$item_type_class $item_wf_state_class url;"
-                        tal:content="item/pretty_title_or_id">
+                        tal:content="dataset/title">
                           Item Title</span>
                   <span class="discreet"
                         tal:content="item/Description">description</span>
                </a>
+            </span>
+            <span tal:condition="python:not dataset['permission']" tal:content="dataset/title">
             </span>
           </li>
         </ul>
