@@ -111,7 +111,7 @@ class AjaxSelectAddWidget(AjaxSelectWidget, AddItemMixin):
             permission = checkPermission('zope2.View', obj)
             if permission:
                 title = obj.Title()
-                if state == DEACTIVE_STATE:
+                if state == DEACTIVE_STATE and self.display_deprecated:
                     title += _(u':Deprecated')
             else:
                 title = _(u'Permission Denied')

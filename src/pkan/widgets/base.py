@@ -23,6 +23,7 @@ class AddItemMixin(object):
     content_type = None
     content_type_title = None
     initial_path = None
+    display_deprecated = False
 
     @property
     def portal_type_name(self):
