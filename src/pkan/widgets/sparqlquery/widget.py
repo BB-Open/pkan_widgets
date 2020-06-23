@@ -18,8 +18,10 @@ MARKUP = u"""
 {widget}
 <div class="pkan-sparqlquery">
   <a class="{klass} pat-contentloaderform" target="_blank" href="{preview_url}"
-      data-pat-contentloaderform="query_id:#{query_id};form_id:#{form_id};url:{url};target:#{target_id};">{title}</a>
-  <textarea class="textarea-widget text-field pkan-sparqlquery__preview" id="{target_id}"></textarea>
+      data-pat-contentloaderform="query_id:#{query_id};
+      form_id:#{form_id};url:{url};target:#{target_id};">{title}</a>
+  <textarea class="textarea-widget text-field pkan-sparqlquery__preview"
+  id="{target_id}"></textarea>
 </div>
 """
 

@@ -27,7 +27,7 @@ class TestSetup(unittest.TestCase):
 
     def test_addon_layer(self):
         """Validate that the browserlayer for our product is installed."""
-        layers = [l.getName() for l in registered_layers()]
+        layers = [ly.getName() for ly in registered_layers()]
         self.assertIn('IPkanWidgetsLayer', layers)
 
 
@@ -50,5 +50,5 @@ class TestUninstall(unittest.TestCase):
 
     def test_addon_layer_removed(self):
         """Validate that the browserlayer is removed."""
-        layers = [l.getName() for l in registered_layers()]
+        layers = [ly.getName() for ly in registered_layers()]
         self.assertNotIn('IPkanWidgetsLayer', layers)
