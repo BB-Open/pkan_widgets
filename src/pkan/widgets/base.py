@@ -11,13 +11,13 @@ from zope.i18n import translate
 
 MARKUP = u"""
 {widget}
-<div class="pkan-addnew">
+<!--<div class="pkan-addnew">
   <a class="{klass} pat-plone-modal
   data-pat-plone-modal="reloadWindowOnClose:false"
   target="_blank" href="{url}">
   {title}
   </a>
-</div>
+</div>-->
 """
 
 
