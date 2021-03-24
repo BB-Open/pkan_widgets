@@ -13,8 +13,8 @@ class RelatedItemsAddWidgetTests(unittest.TestCase):
         self.request = TestRequest(environ={'HTTP_ACCEPT_LANGUAGE': 'en'})
 
     def test_fieldwidget(self):
-        from pkan.widgets.relateditems.widget import RelatedItemsAddWidget
         from pkan.widgets.relateditems.widget import RelatedItemsAddFieldWidget
+        from pkan.widgets.relateditems.widget import RelatedItemsAddWidget
         field = Mock(__name__='field', title=u'', required=True)
         vocabulary = Mock()
         request = Mock()

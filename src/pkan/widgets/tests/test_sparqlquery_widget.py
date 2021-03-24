@@ -13,8 +13,8 @@ class SparqlQueryWidgetTests(unittest.TestCase):
         self.request = TestRequest(environ={'HTTP_ACCEPT_LANGUAGE': 'en'})
 
     def test_fieldwidget(self):
-        from pkan.widgets.sparqlquery.widget import SparqlQueryWidget
         from pkan.widgets.sparqlquery.widget import SparqlQueryFieldWidget
+        from pkan.widgets.sparqlquery.widget import SparqlQueryWidget
         field = Mock(__name__='field', title=u'', required=True)
         vocabulary = Mock()
         request = Mock()

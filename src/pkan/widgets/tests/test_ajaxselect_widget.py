@@ -13,8 +13,8 @@ class AjaxSelectAddWidgetTests(unittest.TestCase):
         self.request = TestRequest(environ={'HTTP_ACCEPT_LANGUAGE': 'en'})
 
     def test_fieldwidget(self):
-        from pkan.widgets.ajaxselect.widget import AjaxSelectAddWidget
         from pkan.widgets.ajaxselect.widget import AjaxSelectAddFieldWidget
+        from pkan.widgets.ajaxselect.widget import AjaxSelectAddWidget
         field = Mock(__name__='field', title=u'', required=True)
         vocabulary = Mock()
         request = Mock()
