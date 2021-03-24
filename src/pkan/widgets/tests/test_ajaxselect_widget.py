@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Tests for pkan.widgets.ajaxselect widget."""
-
 from mock import Mock
 from zope.publisher.browser import TestRequest
 
