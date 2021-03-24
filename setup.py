@@ -6,6 +6,7 @@ from setuptools import setup
 from setuptools.command.develop import develop
 from setuptools.command.install import install
 
+
 version = '0.1.dev0'
 description = 'Widgets for PKAN.'
 long_description = '\n\n'.join([
