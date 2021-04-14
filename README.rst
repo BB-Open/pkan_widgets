@@ -2,16 +2,8 @@
 pkan.widgets
 ============
 
-.. image:: https://img.shields.io/pypi/v/pkan.widgets.svg
-   :target: https://pypi.python.org/pypi/pkan.widgets
-   :alt: PyPI Version
-
-.. image:: https://img.shields.io/pypi/pyversions/pkan.widgets.svg
-   :target: https://pypi.python.org/pypi/pkan.widgets
-   :alt: Supported Python Versions
-
-.. image:: https://img.shields.io/travis/BB-Open/pkan.widgets/master.svg
-   :target: http://travis-ci.org/BB-Open/pkan.widgets
+.. image:: https://travis-ci.org/BB-Open/pkan_widgets.svg?branch=master
+   :target: https://travis-ci.org/github/BB-Open/pkan_widgets
    :alt: Travis CI status
 
 .. image:: https://img.shields.io/coveralls/github/BB-Open/pkan.widgets/master.svg
